@@ -9,14 +9,14 @@ object Fibonacci {
   }
 
   def fib(n: Int): Int = {
-  	@annotation.tailrec
-  	def go(n1: Int, n2: Int, i: Int): Int =
- 	  if (i > n) n1+n2
-  	  else if (i == 0) go(0, 0, i+1)
-  	  else if (i == 1) go(0, 1, i+1)
-  	  else go(n1+n2, n1, i+1)
+    @annotation.tailrec
+    def go(n1: Int, n2: Int, i: Int): Int =
+    if (i > n) n1+n2
+      else if (i == 0) go(0, 0, i+1)
+      else if (i == 1) go(0, 1, i+1)
+      else go(n1+n2, n1, i+1)
 
-  	go(0, 0, 0) 
+    go(0, 0, 0) 
   }
 
   private def formatFib(x: Int) = {
@@ -25,10 +25,10 @@ object Fibonacci {
   }
 
   private def test() {
-  	var x = 0
-  	for (x <- 0 to 11) {
+    var x = 0
+    for (x <- 0 to 11) {
       assert(fib_non_tailrec(x) == fib(x), "Calculation of Fibonacci(" + x + ") failed.")
-  	}
+    }
   }
 
   def main(args: Array[String]): Unit = {
